@@ -20,6 +20,10 @@ body {
   height: 90vh;
   position: relative;
   border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+.swiper:hover {
+  transform: scale(1.02);
 }
 
 header {
@@ -30,6 +34,12 @@ header {
   align-items: center;
   position: absolute;
   z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
+}
+header:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 header > a {
   text-decoration: none;
@@ -41,9 +51,11 @@ header > a {
   line-height: 6vmin;
   padding: 5px;
   border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 header > a:hover {
   background-color: #3a6ea563;
+  color: white;
 }
 
 .swiper-slide {
@@ -77,9 +89,14 @@ header > a:hover {
   font-size: calc(10px + 1vw);
   text-decoration: none;
   display: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .order-btn:active {
   font-size: calc(10px + 1.15vw);
+}
+.order-btn:hover {
+  background-color: #555;
+  transform: scale(1.05);
 }
 
 .menu {
@@ -88,19 +105,21 @@ header > a:hover {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding: 0 10px;
 }
 .menu > h1 {
   width: 80%;
   margin-top: 30px;
   font-size: calc(10px + 2.5vw);
+  text-align: center;
 }
 .items {
-  width: 95%;
+  width: 100%;
+  max-width: 1200px;
   height: 85vh;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
   justify-content: center;
   box-shadow: 0 0 5px;
   border-radius: 20px;
@@ -109,12 +128,15 @@ header > a:hover {
 }
 .items > div {
   height: 25vmin;
-  width: 25vmin;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  transition: transform 0.3s ease;
+}
+.items > div:hover {
+  transform: scale(1.05);
 }
 .items-image {
   height: 90px;
@@ -142,15 +164,24 @@ header > a:hover {
   border-radius: 20px;
   cursor: pointer;
   display: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cart-btn:hover {
+  background-color: #333;
+  transform: scale(1.05);
 }
 .about {
-  height: 60vmin;
+  height: auto;
+  min-height: 60vmin;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
 }
 .about > div {
   width: 23%;
+  min-width: 250px;
   height: 95%;
   padding: 10px;
   border-radius: 20px;
@@ -160,6 +191,11 @@ header > a:hover {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+.about > div:hover {
+  transform: scale(1.05);
 }
 .about > div h2 {
   text-align: center;
@@ -172,7 +208,8 @@ header > a:hover {
   height: 150px;
 }
 .contact {
-  height: 100vmin;
+  height: auto;
+  min-height: 100vmin;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -186,18 +223,20 @@ header > a:hover {
 
 .contact-form {
   margin-top: 20px;
-  height: 70vmin;
-  width: 30%;
+  height: auto;
+  width: 80%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   box-shadow: 0 0 10px;
   border-radius: 30px;
+  padding: 20px;
 }
 .contact-form label {
-  height: 12vmin;
-  width: 80%;
+  height: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -209,23 +248,31 @@ header > a:hover {
   border-radius: 20px;
   border: 1px solid grey;
   outline: none;
+  padding: 10px;
 }
 
 #text-area {
   resize: none;
-  width: 80%;
+  width: 100%;
   min-height: 15vmin;
   padding: 10px;
-
+  border-radius: 20px;
+  border: 1px solid grey;
+  outline: none;
 }
 .contact-form button {
-  height: 10vmin;
+  height: 80%;
   width: 80%;
   border-radius: 30px;
   border: none;
   background-color: #3a6ea5;
-  font-size: calc(10px + 1.5vw);
+  font-size: calc(8px + 1vw);
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.contact-form button:hover {
+  background-color: #2a4a7a;
+  transform: scale(1.05);
 }
 
 footer {
@@ -235,8 +282,8 @@ footer {
   text-align: center;
   position: relative;
 }
-.back-home{
-  height:15vmin;
+.back-home {
+  height: 15vmin;
   width: 15vmin;
   border-radius: 50%;
   color: #fff;
@@ -249,11 +296,11 @@ footer {
   box-shadow: 0 0 10px;
   position: absolute;
   bottom: 60px;
-  right:15px;
+  right: 15px;
   z-index: 20;
-  transition: .5s;
+  transition: 0.5s;
 }
-.back-home:hover{
+.back-home:hover {
   transform: scale(1.1);
 }
 
