@@ -4,7 +4,7 @@ Welcome to the Spice Haven project! This is a responsive restaurant website show
 
 Spice Haven is a modern restaurant website designed to provide visitors with an engaging and visually appealing experience. The website includes sections for the home page, menu, about, and contact information, along with a dynamic slideshow and an interactive menu. This project is part of my journey to enhance my web development skills.
 
-Live Demo - 
+Live Demo - https://codelikeamachine.github.io/Day46of50-Hotel-Restaurant-Website-Landing-Page/
 
 # Join Me:
 
